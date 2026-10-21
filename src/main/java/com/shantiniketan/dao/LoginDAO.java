@@ -18,9 +18,10 @@ public class LoginDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/shantiniketan_higher_secondary_school?useSSL=false&allowPublicKeyRetrieval=true",
-                    "root",
-                    "root");
+//                    "jdbc:mysql://localhost:3306/shantiniketan_higher_secondary_school?useSSL=false&allowPublicKeyRetrieval=true",
+                    "jdbc:mysql://mysql-2de487cd-shantiniketan-higher-secondary-school.c.aivencloud.com:20426/default?useSSL=true&requireSSL=true",
+                    "avnadmin",
+                    "AVNS_wYuT_CjVaLuHzgpGLM9");
         } catch (Exception e) {
             e.printStackTrace();
         }
