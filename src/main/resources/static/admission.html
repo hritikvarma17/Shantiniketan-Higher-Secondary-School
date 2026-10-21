@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Admission Portal | Shantiniketan Higher Secondary
+	School</title>
+
+<!-- Bootstrap 5 & Font Awesome -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+	rel="stylesheet">
+
+<!-- Existing Styles -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admission_style.css">
+<link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+</head>
+
+<body class="bg-light">
+	<!-- Header / Navbar -->
+	<header>
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow fixed-top"
+			style="max-height: 72px; border-bottom-left-radius: 50px; border-bottom: 2px solid #FFC107;"> 
+			<div class="container-fluid">
+				<a class="navbar-brand d-flex align-items-center gap-2" href="/">
+					<img src="Images/shantiniketan-logo-nav-bar.png"
+					alt="Shantiniketan School Logo" height="46">
+
+					<div class="d-flex flex-column leading-tight">
+						<span class="fw-bold text-uppercase"
+							style="font-size: 1.15rem; letter-spacing: 1px; color: #f8f9fa;">
+							Shantiniketan </span> <span class="text-warning text-uppercase"
+							style="font-size: 0.65rem; letter-spacing: 1.5px; font-weight: 600;">
+							Higher Secondary School </span>
+					</div> 
+					<a href="/"
+					class="btn btn-outline-warning btn-sm rounded-pill px-3 ms-auto homeBtn">
+						<i class="fa-solid fa-arrow-left me-1"></i> <span
+						class="d-none d-sm-inline">Back to </span>Home
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="admission-portal-wrapper">
+		<div class="container">
+
+			<!-- Banner Card Header -->
+			<div
+				class="admission-header-card text-center text-white mb-4 shadow-sm p-4 p-md-5 rounded-4">
+				<span
+					class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase tracking-wider mb-2">
+					Academic Session 2027–28 </span>
+				<h1 class="display-6 fw-bold mb-2">Student Admission
+					Registration</h1>
+				<p class="lead opacity-90 mx-auto small mb-0"
+					style="max-width: 680px;">
+					Please fill out the official registration form carefully. Fields
+					marked with an asterisk (<span class="text-warning">*</span>) are
+					mandatory.
+				</p>
+			</div>
+
+			<!-- Form Container Card -->
+			<div
+				class="card border-0 shadow-sm rounded-4 mb-5 admission-form-container">
+				<div class="card-body p-4 p-md-5">
+
+					<form action="admissionprocess" method="POST"
+						enctype="multipart/form-data" id="admissionForm"
+						class="needs-validation" novalidate>
+
+						<!-- SECTION 1: Academic Choice -->
+						<div class="form-section-title mb-4">
+							<span class="step-num">1</span>
+							<div>
+								<h5 class="fw-bold mb-0 text-dark">Class & Curriculum
+									Selection</h5>
+								<small class="text-muted">Choose the grade and board you
+									are seeking admission for</small>
+							</div>
+						</div>
+
+						<div class="row g-3 mb-4">
+							<div class="col-md-6">
+								<label for="applyingGrade" class="form-label fw-semibold">Applying
+									For Grade <span class="text-danger">*</span>
+								</label> <select class="form-select custom-input" id="applyingGrade"
+									name="applyingGrade" required
+									onchange="toggleStreamSelection(this.value)">
+									<option value="" disabled selected>-- Select Grade /
+										Class --</option>
+									<optgroup label="Pre-Primary">
+										<option value="NURSERY">Nursery</option>
+										<option value="JR_KG">Junior KG</option>
+										<option value="SR_KG">Senior KG</option>
+									</optgroup>
+									<optgroup label="Primary (I–V)">
+										<option value="CLASS_1">Class I</option>
+										<option value="CLASS_2">Class II</option>
+										<option value="CLASS_3">Class III</option>
+										<option value="CLASS_4">Class IV</option>
+										<option value="CLASS_5">Class V</option>
+									</optgroup>
+									<optgroup label="Secondary (VI–X)">
+										<option value="CLASS_6">Class VI</option>
+										<option value="CLASS_7">Class VII</option>
+										<option value="CLASS_8">Class VIII</option>
+										<option value="CLASS_9">Class IX</option>
+										<option value="CLASS_10">Class X</option>
+									</optgroup>
+									<optgroup label="Higher Secondary (XI–XII)">
+										<option value="CLASS_11">Class XI</option>
+										<option value="CLASS_12">Class XII</option>
+									</optgroup>
+								</select>
+								<div class="invalid-feedback">Please select an academic
+									grade.</div>
+							</div>
+
+							<div class="col-md-6" id="streamContainer" style="display: none;">
+								<label for="selectedStream" class="form-label fw-semibold">Higher
+									Secondary Stream <span class="text-danger">*</span>
+								</label> <select class="form-select custom-input" id="selectedStream"
+									name="selectedStream">
+									<option value="" disabled selected>-- Choose Stream --</option>
+									<option value="SCIENCE_PCM">Science (Physics,
+										Chemistry, Maths)</option>
+									<option value="SCIENCE_PCB">Science (Physics,
+										Chemistry, Biology)</option>
+									<option value="COMMERCE_MATHS">Commerce (with Applied
+										Mathematics)</option>
+									<option value="COMMERCE_IP">Commerce (with Informatics
+										Practices)</option>
+								</select>
+								<div class="invalid-feedback">Please select a stream.</div>
+							</div>
+
+							<div class="col-md-6">
+								<label for="curriculumBoard" class="form-label fw-semibold">Preferred
+									Curriculum <span class="text-danger">*</span>
+								</label> <select class="form-select custom-input" id="curriculumBoard"
+									name="curriculumBoard" required>
+									<option value="CBSE" selected>Central Board of
+										Secondary Education (CBSE)</option>
+									<option value="STATE_BOARD">State Board</option>
+								</select>
+							</div>
+						</div>
+
+						<hr class="my-4 opacity-25">
+
+						<!-- SECTION 2: Student Personal Information -->
+						<div class="form-section-title mb-4">
+							<span class="step-num">2</span>
+							<div>
+								<h5 class="fw-bold mb-0 text-dark">Student Particulars</h5>
+								<small class="text-muted">Enter student's legal name and
+									date of birth as per birth certificate</small>
+							</div>
+						</div>
+
+						<div class="row g-3 mb-4">
+							<div class="col-md-4">
+								<label for="firstName" class="form-label fw-semibold">First
+									Name <span class="text-danger">*</span>
+								</label> <input type="text" class="form-control custom-input"
+									id="firstName" name="firstName" placeholder="e.g. Aarav"
+									required>
+								<div class="invalid-feedback">First name is required.</div>
+							</div>
+							<div class="col-md-4">
+								<label for="middleName" class="form-label fw-semibold">Middle
+									Name</label> <input type="text" class="form-control custom-input"
+									id="middleName" name="middleName"
+									placeholder="Father's / Middle Name">
+							</div>
+							<div class="col-md-4">
+								<label for="lastName" class="form-label fw-semibold">Last
+									Name / Surname <span class="text-danger">*</span>
+								</label> <input type="text" class="form-control custom-input"
+									id="lastName" name="lastName" placeholder="e.g. Patel" required>
+								<div class="invalid-feedback">Last name is required.</div>
+							</div>
+
+							<div class="col-md-4">
+								<label for="dob" class="form-label fw-semibold">Date of
+									Birth <span class="text-danger">*</span>
+								</label> <input type="date" class="form-control custom-input" id="dob"
+									name="dob" required>
+								<div class="invalid-feedback">Valid birth date is
+									required.</div>
+							</div>
+							<div class="col-md-4">
+								<label for="gender" class="form-label fw-semibold">Gender
+									<span class="text-danger">*</span>
+								</label> <select class="form-select custom-input" id="gender"
+									name="gender" required>
+									<option value="" disabled selected>-- Select Gender --</option>
+									<option value="MALE">Male</option>
+									<option value="FEMALE">Female</option>
+									<option value="OTHER">Other</option>
+								</select>
+								<div class="invalid-feedback">Please choose a gender.</div>
+							</div>
+							<div class="col-md-4">
+								<label for="bloodGroup" class="form-label fw-semibold">Blood
+									Group</label> <select class="form-select custom-input" id="bloodGroup"
+									name="bloodGroup">
+									<option value="" selected>-- Not Known --</option>
+									<option value="A+">A+</option>
+									<option value="A-">A-</option>
+									<option value="B+">B+</option>
+									<option value="B-">B-</option>
+									<option value="O+">O+</option>
+									<option value="O-">O-</option>
+									<option value="AB+">AB+</option>
+									<option value="AB-">AB-</option>
+								</select>
+							</div>
+
+							<div class="col-md-6">
+								<label for="prevSchool" class="form-label fw-semibold">Previous
+									School Attended</label> <input type="text"
+									class="form-control custom-input" id="prevSchool"
+									name="prevSchool" placeholder="Leave blank if Pre-Primary">
+							</div>
+							<div class="col-md-6">
+								<label for="prevGradeScore" class="form-label fw-semibold">Last
+									Grade Percentage / GPA</label> <input type="text"
+									class="form-control custom-input" id="prevGradeScore"
+									name="prevGradeScore" placeholder="e.g. 92% or Grade A1">
+							</div>
+						</div>
+
+						<hr class="my-4 opacity-25">
+
+						<!-- SECTION 3: Parent / Guardian Information -->
+						<div class="form-section-title mb-4">
+							<span class="step-num">3</span>
+							<div>
+								<h5 class="fw-bold mb-0 text-dark">Parent & Guardian
+									Details</h5>
+								<small class="text-muted">Contact details for all
+									official communications and alerts</small>
+							</div>
+						</div>
+
+						<div class="row g-3 mb-4">
+							<div class="col-md-6">
+								<label for="fatherName" class="form-label fw-semibold">Father's
+									Full Name <span class="text-danger">*</span>
+								</label> <input type="text" class="form-control custom-input"
+									id="fatherName" name="fatherName" required>
+								<div class="invalid-feedback">Father's name is required.</div>
+							</div>
+							<div class="col-md-6">
+								<label for="motherName" class="form-label fw-semibold">Mother's
+									Full Name <span class="text-danger">*</span>
+								</label> <input type="text" class="form-control custom-input"
+									id="motherName" name="motherName" required>
+								<div class="invalid-feedback">Mother's name is required.</div>
+							</div>
+
+							<div class="col-md-6">
+								<label for="primaryPhone" class="form-label fw-semibold">Primary
+									Contact Number <span class="text-danger">*</span>
+								</label>
+								<div class="input-group">
+									<span class="input-group-text bg-light text-muted border-end-0">+91</span>
+									<input type="tel" pattern="[0-9]{10}"
+										class="form-control custom-input border-start-0"
+										id="primaryPhone" name="primaryPhone"
+										placeholder="10-digit mobile number" required>
+								</div>
+								<div class="invalid-feedback">Enter a valid 10-digit phone
+									number.</div>
+							</div>
+							<div class="col-md-6">
+								<label for="guardianEmail" class="form-label fw-semibold">Email
+									Address for Correspondence <span class="text-danger">*</span>
+								</label> <input type="email" class="form-control custom-input"
+									id="guardianEmail" name="guardianEmail"
+									placeholder="parent@example.com" required>
+								<div class="invalid-feedback">Please provide a valid
+									email.</div>
+							</div>
+
+							<div class="col-12">
+								<label for="residentialAddress" class="form-label fw-semibold">Residential
+									Address <span class="text-danger">*</span>
+								</label>
+								<textarea class="form-control custom-input"
+									id="residentialAddress" name="residentialAddress" rows="2"
+									placeholder="House/Flat No., Society, Landmark" required></textarea>
+								<div class="invalid-feedback">Residential address is
+									required.</div>
+							</div>
+
+							<div class="col-md-4">
+								<label for="city" class="form-label fw-semibold">City <span
+									class="text-danger">*</span></label> <input type="text"
+									class="form-control custom-input" id="city" name="city"
+									placeholder="e.g. Ahmedabad" required>
+							</div>
+							<div class="col-md-4">
+								<label for="state" class="form-label fw-semibold">State
+									<span class="text-danger">*</span>
+								</label> <input type="text" class="form-control custom-input" id="state"
+									name="state" placeholder="e.g. Gujarat" required>
+							</div>
+							<div class="col-md-4">
+								<label for="pincode" class="form-label fw-semibold">Pincode
+									<span class="text-danger">*</span>
+								</label> <input type="text" pattern="[0-9]{6}"
+									class="form-control custom-input" id="pincode" name="pincode"
+									placeholder="6-digit postal code" required>
+							</div>
+						</div>
+
+						<hr class="my-4 opacity-25">
+
+						<!-- SECTION 4: Transportation & Document Upload -->
+						<div class="form-section-title mb-4">
+							<span class="step-num">4</span>
+							<div>
+								<h5 class="fw-bold mb-0 text-dark">Facilities &
+									Verification Attachments</h5>
+								<small class="text-muted">Transport preferences and
+									initial document files (PDF/JPG/PNG max 2MB each)</small>
+							</div>
+						</div>
+
+						<div class="row g-3 mb-4">
+							<div class="col-md-12 mb-2">
+								<div
+									class="form-check form-switch p-2 bg-light rounded-3 d-flex align-items-center gap-3 ps-5">
+									<input class="form-check-input ms-n4" type="checkbox"
+										role="switch" id="transportFacility" name="transportFacility">
+									<label class="form-check-label fw-semibold text-dark mb-0"
+										for="transportFacility"> Opt for School Bus Transport
+										Facility (GPS Tracked) </label>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<label for="studentPhoto" class="form-label fw-semibold">Student
+									Passport Photo <span class="text-danger">*</span>
+								</label> <input class="form-control custom-input" type="file"
+									id="studentPhoto" name="studentPhoto" accept="image/*" required>
+								<div class="form-text">Recent colored passport size photo.</div>
+							</div>
+
+							<div class="col-md-6">
+								<label for="birthCertificate" class="form-label fw-semibold">Birth
+									Certificate / Transfer Certificate <span class="text-danger">*</span>
+								</label> <input class="form-control custom-input" type="file"
+									id="birthCertificate" name="birthCertificate"
+									accept=".pdf,image/*" required>
+								<div class="form-text">PDF, JPEG or PNG format.</div>
+							</div>
+						</div>
+
+						<!-- Declaration Checkbox -->
+						<div class="form-check mb-4 p-3 bg-light rounded-3">
+							<input class="form-check-input ms-0 me-2" type="checkbox"
+								value="" id="declarationCheck" required> <label
+								class="form-check-label small text-muted" for="declarationCheck">
+								I hereby declare that all particulars stated in this application
+								are true and complete to the best of my knowledge. I agree to
+								abide by the disciplinary and academic rules of <strong>Shantiniketan
+									Higher Secondary School</strong>.
+							</label>
+							<div class="invalid-feedback">You must verify and agree
+								prior to submitting.</div>
+						</div>
+
+						<!-- Submit Button -->
+						<div
+							class="d-flex justify-content-between align-items-center pt-2">
+							<button type="reset"
+								class="btn btn-outline-secondary px-4 py-2 rounded-pill fw-semibold">
+								Clear Form</button>
+							<button type="submit"
+								class="btn btn-emerald-apply px-5 py-2 rounded-pill fw-bold shadow">
+								Submit Application <i class="fa-solid fa-paper-plane ms-2"></i>
+							</button>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<!-- Footer Component matching existing styling -->
+
+	<footer class="custom-school-footer pt-5 pb-3">
+		<div class="container pt-3">
+			<div class="row g-4 justify-content-between">
+
+				<!-- Column 1: School Identity & Brief Intro -->
+				<div class="col-lg-4 col-md-6">
+					<a
+						class="d-flex align-items-center gap-2 text-decoration-none mb-3"
+						href="/"> <img src="Images/shantiniketan-logo-nav-bar.png"
+						alt="Shantiniketan Logo" height="46">
+						<div class="d-flex flex-column leading-tight">
+							<span class="fw-bold tracking-wide text-uppercase text-white"
+								style="font-size: 1.15rem; letter-spacing: 1px;">
+								Shantiniketan </span> <span class="text-warning text-uppercase"
+								style="font-size: 0.65rem; letter-spacing: 1.5px; font-weight: 700;">
+								Higher Secondary School </span>
+						</div>
+					</a>
+					<p class="footer-desc small pe-lg-4 mb-4">Committed to
+						nurturing intellectual curiosity, ethical character, and academic
+						leadership through modern experiential learning and values-based
+						mentorship.</p>
+					<!-- Brand-Colored Social Icons -->
+					<div class="d-flex gap-2">
+						<a href="#" class="social-icon-btn social-fb"
+							aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="#" class="social-icon-btn social-x"
+							aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+						<a href="#" class="social-icon-btn social-ig"
+							aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#" class="social-icon-btn social-yt" aria-label="YouTube"><i
+							class="fa-brands fa-youtube"></i></a> <a href="#"
+							class="social-icon-btn social-li" aria-label="LinkedIn"><i
+							class="fa-brands fa-linkedin-in"></i></a>
+					</div>
+				</div>
+
+				<!-- Column 2: Quick Navigation -->
+				<div class="col-lg-2 col-md-6 col-6">
+					<h6 class="footer-title small tracking-wider mb-3">Navigation</h6>
+					<ul class="list-unstyled footer-links small">
+						<li class="mb-2"><a href="/"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Home</a></li>
+						<li class="mb-2"><a href="about_us"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								About Us</a></li>
+						<li class="mb-2"><a href="admission"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Admissions</a></li>
+						<li class="mb-2"><a href="facilities"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Campus Facilities</a></li>
+						<li class="mb-2"><a href="events"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Events & Activities</a></li>
+						<li class="mb-2"><a href="achievements"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Achievements</a></li>
+					</ul>
+				</div>
+
+				<!-- Column 3: Admission Help & Downloads -->
+				<div class="col-lg-2 col-md-6 col-6">
+					<h6 class="footer-title small tracking-wider mb-3">Admission
+						Help</h6>
+					<ul class="list-unstyled footer-links small">
+						<li class="mb-2"><a href="#" data-bs-toggle="modal"
+							data-bs-target="#admissionInstructionsModal"> <i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Fee Structure
+						</a></li>
+						<li class="mb-2"><a href="#" data-bs-toggle="modal"
+							data-bs-target="#admissionInstructionsModal"> <i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Age Criteria
+						</a></li>
+						<li class="mb-2"><a href="dashboard"><i
+								class="fa-solid fa-angle-right me-1 text-warning small opacity-75"></i>
+								Student Portal</a></li>
+					</ul>
+				</div>
+
+				<!-- Column 4: Admission Helpline & Campus Office -->
+				<div class="col-lg-3 col-md-6">
+					<h6 class="footer-title small tracking-wider mb-3">Admission
+						Cell</h6>
+					<div class="d-flex flex-column gap-2 small">
+						<div class="footer-contact-item d-flex align-items-start gap-2">
+							<i class="fa-solid fa-location-dot text-warning mt-1"></i> <span>Main
+								Institutional Campus, Knowledge Corridor</span>
+						</div>
+						<div class="footer-contact-item d-flex align-items-center gap-2">
+							<i class="fa-solid fa-phone text-warning"></i> <span>+91
+								(0) 79 2345 6789</span>
+						</div>
+						<div class="footer-contact-item d-flex align-items-center gap-2">
+							<i class="fa-solid fa-clock text-warning"></i> <span>Mon –
+								Sat: 8:00 AM – 4:00 PM</span>
+						</div>
+						<div class="footer-contact-item d-flex align-items-center gap-2">
+							<i class="fa-solid fa-envelope text-warning"></i> <a
+								href="mailto:admissions@shantiniketan.edu"
+								class="text-decoration-none text-light opacity-90">admissions@shantiniketan.edu</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<hr class="footer-divider my-4">
+
+			<!-- Bottom Bar: Copyright & Policy Links -->
+			<div class="row align-items-center small text-secondary">
+				<div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+					&copy; <span id="currentYear"></span> Shantiniketan Higher
+					Secondary School. All rights reserved.
+				</div>
+				<div class="col-md-6 text-center text-md-end footer-bottom-links">
+					<a href="#" class="me-3">Privacy Policy</a> <a href="#"
+						class="me-3">Terms of Use</a> <a href="#">Sitemap</a>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Admission Instructions Modal -->
+		<div class="modal fade" id="admissionInstructionsModal" tabindex="-1"
+			aria-labelledby="admissionModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable modal-lg">
+				<div
+					class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+
+					<!-- Modal Header -->
+					<div class="modal-header bg-dark text-white px-4 py-3">
+						<h5 class="modal-title fw-bold" id="admissionModalLabel">
+							<i class="fa-solid fa-graduation-cap text-warning me-2"></i>Admission
+							Guidelines & Fee Structure (2027–28)
+						</h5>
+						<button type="button" class="btn-close btn-close-white"
+							data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<!-- Modal Body -->
+					<div class="modal-body p-4 bg-light">
+
+						<!-- Section A: Overview & General Instructions -->
+						<div class="mb-4">
+							<h6 class="fw-bold text-primary mb-2">
+								<i class="fa-solid fa-clipboard-check me-2"></i>General
+								Instructions
+							</h6>
+							<ul class="small text-secondary ps-3 mb-0">
+								<li class="mb-1">Ensure all student particulars match legal
+									identity documents (Birth Certificate/Aadhaar).</li>
+								<li class="mb-1">Mandatory files (Passport Photo & Birth
+									Certificate) must be under 2MB in PDF, JPG, or PNG format.</li>
+								<li class="mb-1">Incomplete applications or forms with
+									incorrect contact details are subject to automatic rejection.</li>
+							</ul>
+						</div>
+
+						<hr class="opacity-25">
+
+						<!-- Section B: Age Criteria Table -->
+						<div class="mb-4">
+							<h6 class="fw-bold text-primary mb-2">
+								<i class="fa-solid fa-child-reaching me-2"></i>Age Criteria (As
+								of June 1, 2027)
+							</h6>
+							<div class="table-responsive">
+								<table
+									class="table table-bordered table-sm bg-white small align-middle text-center">
+									<thead class="table-dark">
+										<tr>
+											<th>Grade Level</th>
+											<th>Minimum Age Requirement</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Nursery</td>
+											<td>3+ Years</td>
+										</tr>
+										<tr>
+											<td>Junior KG</td>
+											<td>4+ Years</td>
+										</tr>
+										<tr>
+											<td>Senior KG</td>
+											<td>5+ Years</td>
+										</tr>
+										<tr>
+											<td>Class I</td>
+											<td>6+ Years</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<hr class="opacity-25">
+
+						<!-- Section C: Fee Chart -->
+						<div class="mb-3">
+							<h6 class="fw-bold text-primary mb-2">
+								<i class="fa-solid fa-indian-rupee-sign me-2"></i>Approximate
+								Annual Fee Structure
+							</h6>
+							<div class="table-responsive">
+								<table
+									class="table table-striped table-bordered table-sm bg-white small align-middle">
+									<thead class="table-dark text-center">
+										<tr>
+											<th>Grade Section</th>
+											<th>Tuition Fee (Annual)</th>
+											<th>Admission / Dev. Fund</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><strong>Pre-Primary (Nursery – Sr. KG)</strong></td>
+											<td class="text-center">₹ 45,000</td>
+											<td class="text-center">₹ 5,000</td>
+										</tr>
+										<tr>
+											<td><strong>Primary (Class I – V)</strong></td>
+											<td class="text-center">₹ 58,000</td>
+											<td class="text-center">₹ 6,500</td>
+										</tr>
+										<tr>
+											<td><strong>Secondary (Class VI – X)</strong></td>
+											<td class="text-center">₹ 72,000</td>
+											<td class="text-center">₹ 8,000</td>
+										</tr>
+										<tr>
+											<td><strong>Higher Secondary (Class XI – XII
+													Science/Commerce)</strong></td>
+											<td class="text-center">₹ 88,000</td>
+											<td class="text-center">₹ 10,000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<small class="text-muted fst-italic">Note: Optional
+								transport (Bus facility) and uniform/book packages are billed
+								separately.</small>
+						</div>
+
+					</div>
+
+					<!-- Modal Footer -->
+					<div class="modal-footer bg-white px-4 py-3">
+						<button type="button"
+							class="btn btn-secondary rounded-pill px-4 btn-sm fw-semibold"
+							data-bs-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Bootstrap & Scripts -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

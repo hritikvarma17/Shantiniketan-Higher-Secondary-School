@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Staff | Shantiniketan Higher Secondary School</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/style.css}">
+<link rel="stylesheet" th:href="@{/students_style.css}">
+</head>
+<body class="bg-light">
+	<header>
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow fixed-top"
+			style="max-height: 72px; border-bottom-left-radius: 50px; border-bottom: 2px solid #FFC107;">
+			<div class="container-fluid">
+				<a class="navbar-brand d-flex align-items-center gap-2"
+					th:href="@{/}"> <img
+					th:src="@{/Images/shantiniketan-logo-nav-bar.png}"
+					alt="Shantiniketan School Logo" height="46">
+
+					<div class="d-flex flex-column leading-tight">
+						<span class="fw-bold text-uppercase"
+							style="font-size: 1.15rem; letter-spacing: 1px; color: #f8f9fa;">
+							Shantiniketan </span> <span class="text-warning text-uppercase"
+							style="font-size: 0.65rem; letter-spacing: 1.5px; font-weight: 600;">
+							Higher Secondary School </span>
+					</div>
+				</a>
+
+				<div class="collapse navbar-collapse" id="navMenu">
+					<ul
+						class="navbar-nav nav-pills ms-auto align-items-lg-center gap-1 mt-3 mt-lg-0"
+						style="cursor: pointer;">
+						<th:block th:if="${session.user != null}">
+							<li class="nav-item"><a th:href="@{/staff}"
+								class="btn btn-outline-warning rounded-pill px-3 py-2 fw-semibold btn-sm">
+									<i class="fa-solid fa-arrow-left me-1"></i> Back to Staff
+							</a></li>
+						</th:block>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main style="margin-top: 90px;" class="container py-4 mb-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-12">
+				<div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+
+					<div
+						class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+						<div>
+							<h3 class="fw-bold text-dark mb-1">
+								<i class="fa-solid fa-user-pen text-warning me-2"></i>Edit Staff
+								Member
+							</h3>
+							<p class="text-muted small mb-0">Update the professional and
+								personal details below.</p>
+						</div>
+					</div>
+
+					<!-- Error Alert Banner -->
+					<div th:if="${errorMessage}"
+						class="alert alert-danger alert-dismissible fade show mb-4"
+						role="alert">
+						<i class="fa-solid fa-triangle-exclamation me-2"></i> <span
+							th:text="${errorMessage}"></span>
+						<button type="button" class="btn-close" data-bs-dismiss="alert"
+							aria-label="Close"></button>
+					</div>
+
+					<!-- Form bound to staff object pointing to update mapping -->
+					<form th:action="@{/staff/update}" th:object="${staff}"
+						method="POST" enctype="multipart/form-data">
+
+						<!-- Hidden Staff ID field so update works on the correct record -->
+						<input type="hidden" th:field="*{staffId}" />
+
+						<div class="row g-3">
+							<!-- First Name -->
+							<div class="col-md-4">
+								<label class="form-label fw-semibold small">First Name <span
+									class="text-danger">*</span></label> <input type="text"
+									class="form-control" th:field="*{firstName}" required>
+							</div>
+
+							<!-- Middle Name -->
+							<div class="col-md-4">
+								<label class="form-label fw-semibold small">Middle Name</label>
+								<input type="text" class="form-control" th:field="*{middleName}">
+							</div>
+
+							<!-- Last Name -->
+							<div class="col-md-4">
+								<label class="form-label fw-semibold small">Last Name <span
+									class="text-danger">*</span></label> <input type="text"
+									class="form-control" th:field="*{lastName}" required>
+							</div>
+
+							<!-- Category / Role Type -->
+							<div class="col-md-6">
+								<label class="form-label fw-semibold small">Category /
+									Role Type <span class="text-danger">*</span>
+								</label> <select class="form-select" th:field="*{roleType}" required>
+									<option value="">Select Category</option>
+									<option value="Leadership & HOD">Leadership & HOD</option>
+									<option value="Teacher">Teacher</option>
+									<option value="IT & Admin">IT & Admin</option>
+									<option value="Support & Maintenance">Support &
+										Maintenance</option>
+								</select>
+							</div>
+
+							<!-- Current Role Title -->
+							<div class="col-md-6">
+								<label class="form-label fw-semibold small">Current
+									Designation / Role <span class="text-danger">*</span>
+								</label> <input type="text" class="form-control"
+									th:field="*{currentRole}" required>
+							</div>
+
+							<!-- Study Qualification -->
+							<div class="col-md-8">
+								<label class="form-label fw-semibold small">Study
+									Qualification <span class="text-danger">*</span>
+								</label> <input type="text" class="form-control"
+									th:field="*{studyQualification}" required>
+							</div>
+
+							<!-- Work Experience -->
+							<div class="col-md-4">
+								<label class="form-label fw-semibold small">Work
+									Experience (Years) <span class="text-danger">*</span>
+								</label> <input type="number" class="form-control"
+									th:field="*{workExperienceYears}" min="0" required>
+							</div>
+
+							<!-- Mobile -->
+							<div class="col-md-6">
+								<label class="form-label fw-semibold small">Mobile
+									Number <span class="text-danger">*</span>
+								</label> <input type="tel" class="form-control" th:field="*{mobile}"
+									required>
+							</div>
+
+							<!-- Email -->
+							<div class="col-md-6">
+								<label class="form-label fw-semibold small">Email
+									Address <span class="text-danger">*</span>
+								</label> <input type="email" class="form-control" th:field="*{email}"
+									required>
+							</div>
+
+							<!-- Address -->
+							<div class="col-12">
+								<label class="form-label fw-semibold small">Residential
+									Address <span class="text-danger">*</span>
+								</label>
+								<textarea class="form-control" th:field="*{address}" rows="2"
+									required></textarea>
+							</div>
+
+							<!-- DOB -->
+							<div class="col-md-3">
+								<label class="form-label fw-semibold small">Date of
+									Birth <span class="text-danger">*</span>
+								</label> <input type="date" class="form-control" id="dob" name="dob"
+									th:value="${staff.dob != null ? #temporals.format(staff.dob, 'yyyy-MM-dd') : ''}"
+									required>
+							</div>
+
+							<!-- Gender -->
+							<div class="col-md-3">
+								<label class="form-label fw-semibold small">Gender <span
+									class="text-danger">*</span></label> <select class="form-select"
+									th:field="*{gender}" required>
+									<option value="">Select</option>
+									<option value="MALE">Male</option>
+									<option value="FEMALE">Female</option>
+									<option value="OTHER">Other</option>
+								</select>
+							</div>
+
+							<!-- Blood Group -->
+							<div class="col-md-3">
+								<label class="form-label fw-semibold small">Blood Group</label>
+								<select class="form-select" th:field="*{bloodGroup}">
+									<option value="">Select</option>
+									<option value="A+">A+</option>
+									<option value="A-">A-</option>
+									<option value="B+">B+</option>
+									<option value="B-">B-</option>
+									<option value="AB+">AB+</option>
+									<option value="AB-">AB-</option>
+									<option value="O+">O+</option>
+									<option value="O-">O-</option>
+								</select>
+							</div>
+
+							<!-- Joining Date -->
+							<div class="col-md-3">
+								<label class="form-label fw-semibold small">Joining Date
+									<span class="text-danger">*</span>
+								</label> <input type="date" class="form-control" id="joiningDate" name="joiningDate"
+									th:value="${staff.joiningDate != null ? #temporals.format(staff.joiningDate, 'yyyy-MM-dd') : ''}"
+									required>
+							</div>
+
+							<!-- Current Photo & Passport Photo File Upload -->
+							<div class="col-12 mt-3">
+								<label class="form-label fw-semibold small"> <i
+									class="fa-solid fa-camera me-1 text-warning"></i> Passport
+									Photo
+								</label>
+								<div class="d-flex align-items-center gap-3 mb-2"
+									th:if="${staff.passportPhoto != null}">
+									<img th:src="@{/staff/photo/{id}(id=${staff.staffId})}"
+										alt="Current Photo" class="rounded shadow-sm"
+										style="width: 50px; height: 50px; object-fit: cover;"> <span
+										class="text-muted small">Current photo on file. Upload
+										a new one below only if you wish to change it.</span>
+								</div>
+								<input type="file" class="form-control" name="photoFile"
+									accept="image/*">
+							</div>
+
+							<!-- Submit Buttons -->
+							<div
+								class="col-12 mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+								<a th:href="@{/staff}"
+									class="btn btn-light rounded-pill px-4 fw-semibold border">Cancel</a>
+								<button type="submit"
+									class="btn btn-warning rounded-pill px-5 fw-semibold text-dark shadow-sm">
+									<i class="fa-solid fa-save me-1"></i> Update Staff Member
+								</button>
+							</div>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

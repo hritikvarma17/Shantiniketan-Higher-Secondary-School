@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 56" width="350" height="56" fill="none">
+    <defs>
+        <linearGradient id="emeraldGrad" x1="4" y1="4" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#0F5132" />
+            <stop offset="100%" stop-color="#062C1B" />
+        </linearGradient>
+    </defs>
+
+    <!-- ICON: Circle + Leaves of Peace + Book -->
+    <g transform="translate(4, 3)">
+        <!-- Outer Minimalist Ring -->
+        <circle cx="25" cy="25" r="23" stroke="#D1A153" stroke-width="1.6" fill="none" stroke-dasharray="130 15" stroke-linecap="round"/>
+        
+        <!-- Central Sun/Dawn Core -->
+        <circle cx="25" cy="25" r="19" fill="url(#emeraldGrad)"/>
+        
+        <!-- Minimalist Open Book -->
+        <path d="M25 24C22.5 21.8 17.5 21.8 14 23.2V32C17.5 30.6 22.5 30.6 25 32.8C27.5 30.6 32.5 30.6 36 32V23.2C32.5 21.8 27.5 21.8 25 24Z" 
+              fill="#FFFFFF" stroke="#062C1B" stroke-width="0.8" stroke-linejoin="round"/>
+        <line x1="25" y1="24" x2="25" y2="32.8" stroke="#062C1B" stroke-width="1.2"/>
+
+        <!-- Laurel / Olive Leaf of Peace (Left) -->
+        <path d="M17 18C15 15 18 12 18 12C18 12 19 15 17 18Z" fill="#D1A153"/>
+        <path d="M14 21C11.5 20 12.5 17 12.5 17C12.5 17 15 18.5 14 21Z" fill="#D1A153"/>
+
+        <!-- Laurel / Olive Leaf of Peace (Right) -->
+        <path d="M33 18C35 15 32 12 32 12C32 12 31 15 33 18Z" fill="#D1A153"/>
+        <path d="M36 21C38.5 20 37.5 17 37.5 17C37.5 17 35 18.5 36 21Z" fill="#D1A153"/>
+        
+        <!-- Spark of Knowledge Dot -->
+        <circle cx="25" cy="15" r="2" fill="#D1A153"/>
+    </g>
+
+    <!-- TYPOGRAPHY: Editorial Serif + Clean Sans -->
+    <g transform="translate(68, 0)">
+        <text x="0" y="29" 
+              fill="#0F5132" 
+              font-family="Georgia, 'Times New Roman', serif" 
+              font-size="22" 
+              font-weight="700" 
+              letter-spacing="1">
+            SHANTINIKETAN
+        </text>
+        <text x="1" y="44" 
+              fill="#D1A153" 
+              font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+              font-size="9" 
+              font-weight="700" 
+              letter-spacing="3.2">
+            ACADEMY OF EXCELLENCE
+        </text>
+    </g>
+</svg>

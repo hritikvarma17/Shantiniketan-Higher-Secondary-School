@@ -1,0 +1,103 @@
+/* ==================== ACHIEVEMENTS PAGE STYLES ==================== */
+/* .achievements-page-wrapper {
+    margin-top: 72px;
+} */
+
+
+
+
+/* Hero Section */
+.achievements-hero-section {
+    padding-top: 120px !important;
+    background: linear-gradient(135deg, #0b4619 0%, #0a2d42 55%, #0e3a75 100%);
+    box-shadow: 0 10px 25px rgba(11, 70, 25, 0.2);
+    border-bottom: 2px solid #ffc107;
+}
+
+/* Stat Counters */
+.stat-box {
+    padding: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-2px);
+}
+
+/* Topper Profile Cards */
+.topper-profile-card {
+    border-radius: 1.15rem;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topper-profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08) !important;
+}
+
+.topper-avatar-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.topper-avatar-circle img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Olympiad Honor Cards */
+.honor-card {
+    border-radius: 1.15rem;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent !important;
+}
+
+.honor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+.honor-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sports Cards */
+.sports-trophy-card {
+    border-radius: 1.15rem;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sports-trophy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+.sports-icon-pill {
+    width: 70px;
+    height: 70px;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

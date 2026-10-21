@@ -1,0 +1,68 @@
+/* ==================== ADMISSION FORM STYLES ==================== */
+
+.admission-portal-wrapper {
+    margin-top: 69px;
+    padding-bottom: 60px;
+    background: radial-gradient(circle at 10% 15%, rgba(11, 70, 25, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(14, 58, 117, 0.05) 0%, transparent 40%),
+        #f8fafc;
+}
+
+/* Hero Header Card */
+.admission-header-card {
+    background: linear-gradient(135deg, #0b4619 0%, #0a2d42 55%, #0e3a75 100%);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    box-shadow: 0 12px 30px rgba(11, 70, 25, 0.2);
+}
+
+.admission-form-container {
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Numbered Steps Header */
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0b4619;
+    color: #ffc107;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(11, 70, 25, 0.25);
+}
+
+/* Form Inputs & Interactive Focus States */
+.custom-input {
+    border-radius: 0.65rem;
+    border: 1px solid #cbd5e1;
+    padding: 0.65rem 0.95rem;
+    font-size: 0.92rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-input:focus {
+    border-color: #0b4619;
+    box-shadow: 0 0 0 0.25rem rgba(11, 70, 25, 0.15);
+}
+
+.form-check-input:checked {
+    background-color: #0b4619;
+    border-color: #0b4619;
+}
+
+@media (max-width: 500px){
+	.homeBtn{
+		
+	}
+}

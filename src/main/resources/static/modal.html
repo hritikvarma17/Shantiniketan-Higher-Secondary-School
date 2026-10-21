@@ -1,0 +1,305 @@
+<!-- Class 12 Toppers Announcement Modal -->
+<div class="modal fade" id="toppersModal" tabindex="-1"
+	aria-labelledby="toppersModalLabel" aria-hidden="true">
+	<div
+		class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-content border-0 shadow-lg toppers-modal-content">
+
+			<!-- Modal Header -->
+			<div
+				class="modal-header border-0 bg-dark text-white p-4 position-relative">
+				<div class="d-flex align-items-center gap-3">
+					<span class="badge bg-warning text-dark p-2 rounded-circle">
+						<i class="bi bi-trophy-fill fs-4"></i>
+					</span>
+					<div>
+						<h4 class="modal-title fw-bold text-warning mb-0"
+							id="toppersModalLabel">Academic Hall of Fame</h4>
+						<p class="text-light-emphasis small mb-0">Celebrating our Top
+							15 Class 12th Board Examination Achievers (Batch 2026)</p>
+					</div>
+				</div>
+				<button type="button" class="btn-close btn-close-white"
+					data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<!-- Modal Body: Top 15 Students Grid -->
+			<div class="modal-body p-4 bg-light">
+				<div class="row g-3">
+
+					<!-- Loop through students (Static template or Thymeleaf th:each) -->
+					<!-- Rank 1 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/classroom.png" alt="Aarav Sharma"
+									class="rounded-circle topper-avatar border border-3 border-warning">
+								<span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-warning text-dark fw-bold mt-2">
+									Rank #1 </span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Aarav Sharma</h6>
+								<span class="badge bg-success-subtle text-success fw-bold">99.2%</span>
+								<small class="text-muted d-block mt-1">Science (PCM)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 2 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Ananya Patel"
+									class="rounded-circle topper-avatar border border-3 border-secondary">
+								<span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-secondary text-white fw-bold mt-2">
+									Rank #2 </span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Ananya Patel</h6>
+								<span class="badge bg-success-subtle text-success fw-bold">98.8%</span>
+								<small class="text-muted d-block mt-1">Commerce</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 3 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Rohan Iyer"
+									class="rounded-circle topper-avatar border border-3 border-dark-subtle">
+								<span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark-subtle text-dark fw-bold mt-2">
+									Rank #3 </span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Rohan Iyer</h6>
+								<span class="badge bg-success-subtle text-success fw-bold">98.4%</span>
+								<small class="text-muted d-block mt-1">Science (PCB)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 4 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Diya Mehta"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">
+									Rank #4 </span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Diya Mehta</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">98.0%</span>
+								<small class="text-muted d-block mt-1">Humanities</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 5 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Kavya Joshi"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">
+									Rank #5 </span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Kavya Joshi</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">97.8%</span>
+								<small class="text-muted d-block mt-1">Commerce</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 6 to 15 (Repeatable pattern) -->
+					<!-- Rank 6 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Ishaan Verma"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#6</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Ishaan Verma</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">97.6%</span>
+								<small class="text-muted d-block mt-1">Science (PCM)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 7 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Neha Kulkarni"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#7</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Neha Kulkarni</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">97.4%</span>
+								<small class="text-muted d-block mt-1">Humanities</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 8 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Aditya Sen"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#8</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Aditya Sen</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">97.2%</span>
+								<small class="text-muted d-block mt-1">Science (PCM)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 9 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Sneha Roy"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#9</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Sneha Roy</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">97.0%</span>
+								<small class="text-muted d-block mt-1">Commerce</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 10 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Manish Nair"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#10</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Manish Nair</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">96.8%</span>
+								<small class="text-muted d-block mt-1">Science (PCB)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 11 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Pooja Rao"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#11</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Pooja Rao</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">96.6%</span>
+								<small class="text-muted d-block mt-1">Humanities</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 12 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Aryan Dave"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#12</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Aryan Dave</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">96.4%</span>
+								<small class="text-muted d-block mt-1">Science (PCM)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 13 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Tanvi Shah"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#13</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Tanvi Shah</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">96.2%</span>
+								<small class="text-muted d-block mt-1">Commerce</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 14 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Vivek Tiwari"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#14</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Vivek Tiwari</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">96.0%</span>
+								<small class="text-muted d-block mt-1">Science (PCM)</small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Rank 15 -->
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2-4">
+						<div class="card h-100 border-0 shadow-sm text-center topper-card">
+							<div class="position-relative pt-3">
+								<img src="Images/banner-students.jpg" alt="Rhea Pillai"
+									class="rounded-circle topper-avatar"> <span
+									class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark text-white fw-semibold mt-2">Rank
+									#15</span>
+							</div>
+							<div class="card-body p-2">
+								<h6 class="fw-bold mb-1 text-truncate">Rhea Pillai</h6>
+								<span class="badge bg-primary-subtle text-primary fw-bold">95.8%</span>
+								<small class="text-muted d-block mt-1">Humanities</small>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Modal Footer with Close Button -->
+			<div
+				class="modal-footer border-0 bg-white py-3 justify-content-between">
+				<span class="text-muted small"> <i
+					class="bi bi-info-circle me-1"></i> Shantiniketan Higher Secondary
+					School continues its 100% pass legacy.
+				</span>
+				<button type="button" class="btn btn-dark rounded-pill px-4"
+					data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

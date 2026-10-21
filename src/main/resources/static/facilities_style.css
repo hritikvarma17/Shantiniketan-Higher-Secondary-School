@@ -1,0 +1,62 @@
+/* ==================== FACILITIES PAGE STYLES ==================== */
+/* .facilities-page-wrapper {
+    margin-top: 72px;
+} */
+
+/* Hero Section */
+.facilities-hero-section {
+    padding-top: 120px !important;
+    background: linear-gradient(135deg, #0b4619 0%, #0a2d42 55%, #0e3a75 100%);
+    box-shadow: 0 10px 25px rgba(11, 70, 25, 0.2);
+    border-bottom: 2px solid #ffc107;
+}
+
+/* Facility Image Cards */
+.facility-image-card {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.facility-image-card img {
+    transition: transform 0.5s ease;
+}
+
+.facility-image-card:hover img {
+    transform: scale(1.05);
+}
+
+.facility-image-card .image-gradient-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(7, 19, 30, 0.9) 0%, transparent 100%);
+}
+
+/* Dynamic cursor classes based on facility headings */
+#smart-classrooms {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:20px;'><text y='20'>✏️</text></svg>"), auto;
+}
+
+#science-labs {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:20px;'><text y='20'>🔍</text></svg>"), auto;
+}
+
+#computer-center {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:20px;'><text y='20'>🤖</text></svg>"), auto;
+}
+
+#central-library {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:20px;'><text y='20'>✨</text></svg>"), auto;
+}
+
+#sports-complex {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:20px;'><text y='20'>🏀</text></svg>"), auto;
+}
+
+#bus-transport {
+    cursor: url("Images/school-bus-sm.gif"), auto;
+}
+ 

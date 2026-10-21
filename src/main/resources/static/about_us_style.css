@@ -1,0 +1,97 @@
+/* ==================== ABOUT US PAGE STYLES ==================== */
+/* .about-page-wrapper {
+    margin-top: 72px;
+} */
+
+/* Hero Section */
+.about-hero-section {
+    padding-top: 120px !important;
+    background: linear-gradient(135deg, #0b4619 0%, #0a2d42 55%, #0e3a75 100%);
+    box-shadow: 0 10px 25px rgba(11, 70, 25, 0.2);
+    border-bottom: 2px solid #ffc107;
+}
+
+.about-us-image-card img {
+    transition: transform 0.5s ease;
+}
+
+.about-us-image-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Values Cards */
+.value-card {
+    border-radius: 1.15rem;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent !important;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+.value-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Principal Card */
+.principal-card {
+    border: 1px solid #e2e8f0;
+}
+
+.principal-avatar-wrap {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 4px;
+    border: 2px solid #ffc107;
+}
+
+/* Mentor Cards */
+.mentor-card {
+    border-radius: 1.15rem;
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+.mentor-avatar-box {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor-avatar-box img {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Timeline Cards */
+.timeline-step {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
