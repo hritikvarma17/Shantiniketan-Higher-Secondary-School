@@ -76,7 +76,7 @@ if (session.getAttribute("user") == null) {
 						%>
 						<!-- Grouped Management Dropdown including Dashboard -->
 						<li class="nav-item dropdown hover-dropdown">
-							<a class="nav-link text-light-emphasis px-3 py-2 rounded-pill custom-nav-pill dropdown-toggle d-flex align-items-center gap-1"
+							<a class="active nav-link text-light-emphasis px-3 py-2 rounded-pill custom-nav-pill dropdown-toggle d-flex align-items-center gap-1"
 								role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Management </a>
 							<ul class="dropdown-menu dropdown-menu-dark shadow-lg">
@@ -85,7 +85,7 @@ if (session.getAttribute("user") == null) {
 								<li><a class="dropdown-item" href="students"><i class="fa-solid fa-user-graduate me-2"></i>Students Records</a></li>
 								<li><a class="dropdown-item" href="time_table"><i class="fa-solid fa-calendar-days me-2"></i>Time Table</a></li>
 								<li><a class="dropdown-item" href="<%= request.getContextPath() %>/staff"><i class="fa-solid fa-chalkboard-user me-2"></i>Staff Directory</a></li>
-								<li><a class="dropdown-item" href="transport"><i class="fa-solid fa-bus me-2"></i>Transport Fleet</a></li>
+								<li><a class="dropdown-item" href="<%= request.getContextPath() %>/transport"><i class="fa-solid fa-bus me-2"></i>Transport Fleet</a></li>
 								<li><hr class="dropdown-divider border-secondary opacity-50"></li>
 								<li><a class="dropdown-item text-warning" href="users"><i class="fa-solid fa-users-gear me-2"></i>System Users</a></li>
 							</ul>

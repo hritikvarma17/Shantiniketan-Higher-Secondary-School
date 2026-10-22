@@ -82,7 +82,7 @@
 								<li><a class="dropdown-item"
 									href="<%=request.getContextPath()%>/staff"><i
 										class="fa-solid fa-chalkboard-user me-2"></i>Staff Directory</a></li>
-								<li><a class="dropdown-item" href="transport"><i
+								<li><a class="dropdown-item" href="<%= request.getContextPath() %>/transport"><i
 										class="fa-solid fa-bus me-2"></i>Transport Fleet</a></li>
 								<li><hr
 										class="dropdown-divider border-secondary opacity-50"></li>
